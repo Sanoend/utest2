@@ -4,13 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 // test for commit from KIper
 public class MenuScript : MonoBehaviour {
-	public Renderer rend;
-	public Transform arrow;
+	
 	public string ClickToScene;
 	// Use this for initialization
 	void Start () {
-		//Debug.Log ("START = "+gameObject.name);
-		rend = GetComponent<Renderer>();
+
 	}
 	
 	// Update is called once per frame
@@ -19,20 +17,13 @@ public class MenuScript : MonoBehaviour {
 	}
 
 	void OnMouseEnter() {
-		rend.material.color = Color.red;
-		if(arrow != null){
-			arrow.gameObject.SetActive (true);
-		}
+
 	}
 	void OnMouseOver() {
-		//rend.material.color -= new Color(0.1F, 0, 0) * Time.deltaTime;
-		rend.material.color -= new Color(0.1F, 0.1F, 0) * Time.deltaTime;
+		
+		//rend.material.color -= new Color(0.1F, 0.1F, 0) * Time.deltaTime;
 	}
 	void OnMouseExit() {
-		rend.material.color = Color.white;
-		if(arrow != null){
-			arrow.gameObject.SetActive (false);
-		}
 	}
 
 	void OnMouseUp(){
