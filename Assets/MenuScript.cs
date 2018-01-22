@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+// test for commit from KIper
 public class MenuScript : MonoBehaviour {
 	public Renderer rend;
 	public Transform arrow;
