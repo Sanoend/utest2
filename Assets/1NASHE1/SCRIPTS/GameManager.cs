@@ -29,8 +29,8 @@ public class GameManager : MonoBehaviour {
 	}
 
     public void Setup() {
-        cloneBita = Instantiate(bita, transform.position,Quaternion.identity) as GameObject;
-        Instantiate(bricksPrefab, transform.position, Quaternion.identity);
+        cloneBita = Instantiate(bita, bita.transform.position, bita.transform.rotation) as GameObject;
+        Instantiate(bricksPrefab, bricksPrefab.transform.position, bricksPrefab.transform.rotation);
     }
 
     void CheckGameOver()
@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour {
 
     void SetupBita()
     {
-        cloneBita = Instantiate(bita, transform.position, Quaternion.identity) as GameObject;
+        cloneBita = Instantiate(bita, bita.transform.position, bita.transform.rotation) as GameObject;
     }
 
     public void DestroyBrick()
