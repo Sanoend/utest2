@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/1NASHE1/SCENES/2GamePadSettings.unity
     guid: 3f4951f0bd0b17f419d0e21148d820ef
+  - enabled: 1
+    path: Assets/1NASHE1/LEVELS/_test_lvl.unity
+    guid: ff3ecc52421a9c54fa28b40b0084d7b9
