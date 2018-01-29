@@ -16,8 +16,13 @@ public class Bita : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		/*
 		float yPos = transform.position.y + (Input.GetAxis("Vertical") * bitaSpeed);
         playerPos = new Vector3(8.5f, Mathf.Clamp(yPos, - 8.4f, 8.4f), 0f);
         transform.position = playerPos;
+        */
+		float yPos = transform.localPosition.y + (Input.GetAxis("Vertical") * bitaSpeed);
+		playerPos = new Vector3(8.5f, Mathf.Clamp(yPos, - 8.4f, 8.4f), 0f);
+		transform.localPosition = playerPos;
 	}
 }

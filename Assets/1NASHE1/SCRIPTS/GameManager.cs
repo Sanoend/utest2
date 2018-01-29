@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour {
     public GameObject bita;
     public GameObject deathParticles;
     public static GameManager instance = null;
+	public bool CreateInParent = false;
 
     private GameObject cloneBita;
 
