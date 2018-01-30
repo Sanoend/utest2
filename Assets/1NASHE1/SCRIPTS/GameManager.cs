@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour {
     public GameObject gameOver;
     public GameObject youWon;
     public GameObject bricksPrefab;
+    public GameObject brickPrefab;
+    public GameObject brickWall;
     public GameObject bita;
     public GameObject deathParticles;
     public static GameManager instance = null;
@@ -20,15 +22,43 @@ public class GameManager : MonoBehaviour {
 
     private GameObject cloneBita;
 	private GameObject cloneBrick;
+    private int[,] array2D = new int[,] { { 1, 1, 1, 1 },
+                                          { 1, 0, 0, 1 },
+                                          { 1, 0, 1, 0 },
+                                          { 0, 1, 1, 0 },
+                                          { 1, 0, 0, 1 }};
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
 
         if (instance == null) instance = this;
         else if (instance != this) Destroy(gameObject);
 
         Setup();
-	}
+        PrintBricks();
+    }
+
+    public void PrintBricks() {
+        System.Collections.IEnumerator myEnumerator = array2D.GetEnumerator();
+        int x = 0;
+        int y = 0;
+        int cols = array2D.GetLength(array2D.Rank - 1); // max для x
+        while (myEnumerator.MoveNext())
+        {
+            if (x < cols)
+            {
+                x++;
+            }
+            else
+            {
+//                Debug.Log(" NEW ROW ");
+                x = 1;
+                y++;
+            }
+            Debug.Log(myEnumerator.Current);
+        }
+    }
 
     public void Setup() {
 		//cloneBita =  Instantiate(bita, bita.transform.position, bita.transform.rotation) as GameObject;

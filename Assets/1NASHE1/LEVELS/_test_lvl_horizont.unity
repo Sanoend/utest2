@@ -211,6 +211,7 @@ Transform:
   - {fileID: 1651557890}
   - {fileID: 594182458}
   - {fileID: 1384565582}
+  - {fileID: 1968176276}
   m_Father: {fileID: 1773988421}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
@@ -592,6 +593,9 @@ MonoBehaviour:
   youWon: {fileID: 1900435351}
   bricksPrefab: {fileID: 1620957319918208, guid: b29ab5005f950a046b67d0798b6fa151,
     type: 2}
+  brickPrefab: {fileID: 1267663894220660, guid: 841137c3d08acee438e279dd44483457,
+    type: 2}
+  brickWall: {fileID: 1968176275}
   bita: {fileID: 1292131039667874, guid: 060d2ac5a6a14e54a90445575c4b3f95, type: 2}
   deathParticles: {fileID: 1672015438704180, guid: fa63391825e7cdc4d82763eff86b935a,
     type: 2}
@@ -1026,6 +1030,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1900435351}
+--- !u!1 &1968176275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1028190586900192, guid: 29d21ba560c9fe14aa0316825210727b,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1968176276}
+  m_Layer: 0
+  m_Name: BrickWall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1968176276
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4066209106825998, guid: 29d21ba560c9fe14aa0316825210727b,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1968176275}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -34, y: -7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 469602883}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2043608541
 GameObject:
   m_ObjectHideFlags: 0
