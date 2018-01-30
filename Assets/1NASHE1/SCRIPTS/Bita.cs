@@ -21,7 +21,8 @@ public class Bita : MonoBehaviour {
         playerPos = new Vector3(8.5f, Mathf.Clamp(yPos, - 8.4f, 8.4f), 0f);
         transform.position = playerPos;
         */
-		float yPos = transform.localPosition.y + (Input.GetAxis("Vertical") * bitaSpeed);
+		//float yPos = transform.localPosition.y + (Input.GetAxis("Vertical") * bitaSpeed);
+		float yPos = transform.localPosition.y + (Input.GetAxis("Horizontal") * bitaSpeed);
 		playerPos = new Vector3(8.5f, Mathf.Clamp(yPos, - 8.4f, 8.4f), 0f);
 		transform.localPosition = playerPos;
 	}

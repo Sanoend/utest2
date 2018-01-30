@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour {
 	public bool CreateInParent = false;
 
     private GameObject cloneBita;
+	private GameObject cloneBrick;
 
     // Use this for initialization
     void Start () {
@@ -30,8 +31,13 @@ public class GameManager : MonoBehaviour {
 	}
 
     public void Setup() {
-        cloneBita = Instantiate(bita, bita.transform.position, bita.transform.rotation) as GameObject;
-        Instantiate(bricksPrefab, bricksPrefab.transform.position, bricksPrefab.transform.rotation);
+		//cloneBita =  Instantiate(bita, bita.transform.position, bita.transform.rotation) as GameObject;
+		cloneBita =  Instantiate(bita) as GameObject;
+		cloneBita.transform.localPosition = bita.transform.position;
+		cloneBita.transform.localRotation = bita.transform.rotation;
+		cloneBita.transform.parent = transform.parent;
+		cloneBrick = Instantiate(bricksPrefab, bricksPrefab.transform.position, bricksPrefab.transform.rotation) as GameObject;
+		cloneBrick.transform.parent = transform.parent;
     }
 
     void CheckGameOver()
@@ -71,6 +77,7 @@ public class GameManager : MonoBehaviour {
     void SetupBita()
     {
         cloneBita = Instantiate(bita, bita.transform.position, bita.transform.rotation) as GameObject;
+		cloneBita.transform.parent = transform.parent;
     }
 
     public void DestroyBrick()
