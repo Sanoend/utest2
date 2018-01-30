@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour {
 
     private GameObject cloneBita;
 	private GameObject cloneBrick;
+    private GameObject cloneOneBrick;
     private int[,] array2D = new int[,] { { 1, 1, 1, 1 },
                                           { 1, 0, 0, 1 },
                                           { 1, 0, 1, 0 },
@@ -56,7 +57,10 @@ public class GameManager : MonoBehaviour {
                 x = 1;
                 y++;
             }
-            Debug.Log(myEnumerator.Current);
+//            Debug.Log(myEnumerator.Current);
+            cloneOneBrick = Instantiate(brickPrefab) as GameObject;
+            cloneOneBrick.transform.parent = brickWall.transform;
+            cloneOneBrick.transform.localPosition = new Vector3(x*3f,y*3f,0f);
         }
     }
 
