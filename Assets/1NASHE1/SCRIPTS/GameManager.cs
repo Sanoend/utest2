@@ -58,9 +58,11 @@ public class GameManager : MonoBehaviour {
                 y++;
             }
 //            Debug.Log(myEnumerator.Current);
-            cloneOneBrick = Instantiate(brickPrefab) as GameObject;
-            cloneOneBrick.transform.parent = brickWall.transform;
-            cloneOneBrick.transform.localPosition = new Vector3(x*3f,y*3f,0f);
+            if(myEnumerator.Current.ToString() != "0") { 
+                cloneOneBrick = Instantiate(brickPrefab) as GameObject;
+                cloneOneBrick.transform.parent = brickWall.transform;
+                cloneOneBrick.transform.localPosition = new Vector3(x*(-3f),y*(-3f),0f);
+            }
         }
     }
 
