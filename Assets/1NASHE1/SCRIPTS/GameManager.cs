@@ -72,8 +72,8 @@ public class GameManager : MonoBehaviour {
 		cloneBita.transform.localPosition = bita.transform.position;
 		cloneBita.transform.localRotation = bita.transform.rotation;
 		cloneBita.transform.parent = transform.parent;
-		cloneBrick = Instantiate(bricksPrefab, bricksPrefab.transform.position, bricksPrefab.transform.rotation) as GameObject;
-		cloneBrick.transform.parent = transform.parent;
+//		cloneBrick = Instantiate(bricksPrefab, bricksPrefab.transform.position, bricksPrefab.transform.rotation) as GameObject;
+//		cloneBrick.transform.parent = transform.parent;
     }
 
     void CheckGameOver()
