@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
     public int lives = 3;
-    public int bricks = 24;
     public float resetDelay = 1f;
     public Text livesText;
     public GameObject gameOver;
@@ -23,6 +22,7 @@ public class GameManager : MonoBehaviour {
     private GameObject cloneBita;
 	private GameObject cloneBrick;
     private GameObject cloneOneBrick;
+    private int bricks = 0;
     private int[,] array2D = new int[,] { { 1, 1, 1, 1 },
                                           { 1, 0, 0, 1 },
                                           { 1, 0, 1, 0 },
@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour {
                 cloneOneBrick = Instantiate(brickPrefab) as GameObject;
                 cloneOneBrick.transform.parent = brickWall.transform;
                 cloneOneBrick.transform.localPosition = new Vector3(x*(-3f),y*(-3f),0f);
+                bricks++;
             }
         }
     }
