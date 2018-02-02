@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour {
 
-    public float ballInitVelocity = 600f;
+    public float ballInitVelocity = 100f;
 
     private Rigidbody rb;
     private bool ballInPlay;
@@ -19,10 +19,11 @@ public class Ball : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if ((Input.GetButtonDown("Fire1") || Input.GetKeyDown("space")) && ballInPlay == false) {
-            transform.parent = null;
+//            transform.parent = null;
+            transform.parent = transform.parent.transform.parent;
             ballInPlay = true;
             rb.isKinematic = false;
-            rb.AddForce(new Vector3(ballInitVelocity, ballInitVelocity, 0));
+//            rb.AddForce(new Vector3(ballInitVelocity, ballInitVelocity, 0));
         }
-	}
+    }
 }

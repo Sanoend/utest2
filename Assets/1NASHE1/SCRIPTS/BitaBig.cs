@@ -6,7 +6,7 @@ public class BitaBig : MonoBehaviour {
 
     public float bitaSpeed = 10f;
 
-    private Vector3 playerPos = new Vector3(-30f, 0, 100f);
+    private Vector3 playerPos = new Vector3(-100f, 0, 100f);
 
 
     // Use this for initialization
@@ -25,7 +25,7 @@ public class BitaBig : MonoBehaviour {
         */
         //float yPos = transform.localPosition.y + (Input.GetAxis("Vertical") * bitaSpeed);
         float xPos = transform.localPosition.x + (Input.GetAxis("Horizontal") * bitaSpeed);
-        playerPos = new Vector3(Mathf.Clamp(xPos, -210f, 170f), 0, 100f);
+        playerPos = new Vector3(Mathf.Clamp(xPos, -295f, 75f), 0, 100f);
         transform.localPosition = playerPos;
     }
 }

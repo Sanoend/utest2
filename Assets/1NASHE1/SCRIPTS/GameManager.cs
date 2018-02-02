@@ -70,9 +70,9 @@ public class GameManager : MonoBehaviour {
     public void Setup() {
 		//cloneBita =  Instantiate(bita, bita.transform.position, bita.transform.rotation) as GameObject;
 		cloneBita =  Instantiate(bita) as GameObject;
-		cloneBita.transform.localPosition = bita.transform.position;
+        cloneBita.transform.parent = transform.parent;
+        cloneBita.transform.localPosition = bita.transform.position;
 		cloneBita.transform.localRotation = bita.transform.rotation;
-		cloneBita.transform.parent = transform.parent;
 //		cloneBrick = Instantiate(bricksPrefab, bricksPrefab.transform.position, bricksPrefab.transform.rotation) as GameObject;
 //		cloneBrick.transform.parent = transform.parent;
     }
