@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour {
 
-    public float ballInitVelocity = 100f;
+    public float ballInitVelocity = 600f;
 
     private Rigidbody rb;
     private bool ballInPlay;
@@ -23,7 +23,7 @@ public class Ball : MonoBehaviour {
             transform.parent = transform.parent.transform.parent;
             ballInPlay = true;
             rb.isKinematic = false;
-//            rb.AddForce(new Vector3(ballInitVelocity, ballInitVelocity, 0));
+            rb.AddForce(new Vector3(ballInitVelocity, 0, ballInitVelocity));
         }
     }
 }

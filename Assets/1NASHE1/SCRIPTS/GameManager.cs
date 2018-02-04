@@ -23,11 +23,17 @@ public class GameManager : MonoBehaviour {
 	private GameObject cloneBrick;
     private GameObject cloneOneBrick;
     private int bricks = 0;
-    private int[,] array2D = new int[,] { { 1, 1, 1, 1 },
-                                          { 1, 0, 0, 1 },
-                                          { 1, 0, 1, 0 },
-                                          { 0, 1, 1, 0 },
-                                          { 1, 0, 0, 1 }};
+    private int[,] array2D = new int[,] {
+                                          { 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+                                          { 1, 0, 0, 1, 1, 1, 1, 1, 1 },
+                                          { 1, 0, 1, 0, 1, 1, 1, 1, 1 },
+                                          { 0, 1, 1, 0, 1, 1, 1, 1, 1 },
+                                          { 1, 0, 0, 1, 1, 1, 1, 1, 1 },
+                                          { 1, 0, 1, 0, 1, 1, 1, 1, 1 },
+                                          { 0, 1, 1, 0, 1, 1, 1, 1, 1 },
+                                          { 1, 0, 0, 1, 1, 1, 1, 1, 1 },
+                                          { 1, 0, 0, 1, 1, 1, 1, 1, 1 }
+    };
 
     // Use this for initialization
     void Start()
@@ -61,20 +67,17 @@ public class GameManager : MonoBehaviour {
             if(myEnumerator.Current.ToString() != "0") { 
                 cloneOneBrick = Instantiate(brickPrefab) as GameObject;
                 cloneOneBrick.transform.parent = brickWall.transform;
-                cloneOneBrick.transform.localPosition = new Vector3(x*(-3f),y*(-3f),0f);
+                cloneOneBrick.transform.localPosition = new Vector3(x*(-6f),y*(-6f),0f);
                 bricks++;
             }
         }
     }
 
     public void Setup() {
-		//cloneBita =  Instantiate(bita, bita.transform.position, bita.transform.rotation) as GameObject;
 		cloneBita =  Instantiate(bita) as GameObject;
         cloneBita.transform.parent = transform.parent;
         cloneBita.transform.localPosition = bita.transform.position;
 		cloneBita.transform.localRotation = bita.transform.rotation;
-//		cloneBrick = Instantiate(bricksPrefab, bricksPrefab.transform.position, bricksPrefab.transform.rotation) as GameObject;
-//		cloneBrick.transform.parent = transform.parent;
     }
 
     void CheckGameOver()
@@ -113,8 +116,10 @@ public class GameManager : MonoBehaviour {
 
     void SetupBita()
     {
-        cloneBita = Instantiate(bita, bita.transform.position, bita.transform.rotation) as GameObject;
-		cloneBita.transform.parent = transform.parent;
+        cloneBita = Instantiate(bita) as GameObject;
+        cloneBita.transform.parent = transform.parent;
+        cloneBita.transform.localPosition = bita.transform.position;
+        cloneBita.transform.localRotation = bita.transform.rotation;
     }
 
     public void DestroyBrick()
