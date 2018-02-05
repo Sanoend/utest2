@@ -5,6 +5,8 @@ using UnityEngine;
 public class Bita : MonoBehaviour {
 
     public float bitaSpeed = 2f;
+    public GameObject fonar;
+    public float fonarCharge = 6f;
 
     private Vector3 playerPos = new Vector3(17f, -5, 0);
 
