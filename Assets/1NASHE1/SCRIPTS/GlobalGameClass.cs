@@ -66,7 +66,7 @@ public class GlobalGameClass : MonoBehaviour {
         double tmp_rand;
         double.TryParse(PlayerPrefs.GetString(strAdsBonusName), out tmp_rand);
 		if (Advertisement.isInitialized == false) {
-			Advertisement.Initialize ("1339143");
+			Advertisement.Initialize ("1694233");
 		}
         switch (strAdsBonusName) {
             case "cr200AdsBonus":
