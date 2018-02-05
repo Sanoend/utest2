@@ -9,7 +9,7 @@ using UnityEngine.SocialPlatforms;
 public class GlobalGameClass : MonoBehaviour {
     public static GlobalGameClass GGC;
 
-    public GameObject soundManager;
+//    public GameObject soundManager;
     public int score = 100;
 	private bool IsBlured = false;
 	private double StartBlurTime1;
@@ -24,16 +24,17 @@ public class GlobalGameClass : MonoBehaviour {
 
     void Awake()
     {
+        
         if (GGC != null)
         {
-            GameObject.Destroy(GGC);
+//            GameObject.Destroy(GGC);
         }
         else
         {
             GGC = this;
         }
-
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
+        DontDestroyOnLoad(GGC);
     }
 
     public void StartSendData(string strAction) {
@@ -62,6 +63,7 @@ public class GlobalGameClass : MonoBehaviour {
     public void GetAdsBonus(string strAdsBonusName)
     {
 		Debug.Log("GetAdsBonus");
+/*
         double unixTime = (double)(System.DateTime.UtcNow - new System.DateTime(1970, 1, 1)).TotalSeconds + Time.deltaTime;
         double tmp_rand;
         double.TryParse(PlayerPrefs.GetString(strAdsBonusName), out tmp_rand);
@@ -85,6 +87,7 @@ public class GlobalGameClass : MonoBehaviour {
                 }else { Debug.Log("cr200AdsBonus no time"); }
                 break;
         }
+ */
     }
 
 	private void HandleShowResultGGC(ShowResult result)
