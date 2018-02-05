@@ -5,6 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 using UnityEngine.Advertisements;
 using UnityEngine.SocialPlatforms;
+using GooglePlayGames;
+using GooglePlayGames.BasicApi;
+using UnityEngine.SocialPlatforms;
 
 public class GlobalGameClass : MonoBehaviour {
     public static GlobalGameClass GGC;
@@ -15,8 +18,22 @@ public class GlobalGameClass : MonoBehaviour {
 	private double StartBlurTime1;
 
 
+	void Start () {
+		
+		PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().EnableSavedGames().RequestServerAuthCode(false).RequestIdToken().Build();
+		PlayGamesPlatform.InitializeInstance(config);
+		PlayGamesPlatform.DebugLogEnabled = true;
+		PlayGamesPlatform.Activate ();
+		Social.localUser.Authenticate((bool success) => {			Debug.Log("Social.localUser.Authenticate = "+success.ToString());			});
+	}
 
-
+	public void PGC_rew(string ptype){
+		if(ptype == "go"){
+			Social.ReportProgress ("CgkIkOLWp8QQEAIQAQ", 100.0f, (bool success) => {
+			});
+			PlayGamesPlatform.Instance.IncrementAchievement("CgkIkOLWp8QQEAIQAQ", 5, (bool success) => {			Debug.Log("ReportProgress");		});
+		}
+	}
 
 	void Update () { 
 

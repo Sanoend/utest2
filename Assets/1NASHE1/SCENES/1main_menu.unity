@@ -857,7 +857,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: _test_lvl
+          m_StringArgument: _test_lvl_horizont
           m_BoolArgument: 0
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1875,7 +1875,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44732a21321be943813fbc989dbef83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundManager: {fileID: 0}
   score: 100
 --- !u!4 &2142285409
 Transform:
