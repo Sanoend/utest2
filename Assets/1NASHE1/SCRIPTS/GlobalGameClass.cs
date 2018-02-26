@@ -19,14 +19,15 @@ public class GlobalGameClass : MonoBehaviour {
 
 
 	void Start () {
-		
+		/*
 		PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().EnableSavedGames().RequestServerAuthCode(false).RequestIdToken().Build();
 		PlayGamesPlatform.InitializeInstance(config);
 		PlayGamesPlatform.DebugLogEnabled = true;
 		PlayGamesPlatform.Activate ();
 		Social.localUser.Authenticate((bool success) => {			Debug.Log("Social.localUser.Authenticate = "+success.ToString());			});
+        */
 	}
-
+    /*
 	public void PGC_rew(string ptype){
 		if(ptype == "go"){
 			Social.ReportProgress ("CgkIkOLWp8QQEAIQAQ", 100.0f, (bool success) => {
@@ -34,7 +35,7 @@ public class GlobalGameClass : MonoBehaviour {
 			PlayGamesPlatform.Instance.IncrementAchievement("CgkIkOLWp8QQEAIQAQ", 5, (bool success) => {			Debug.Log("ReportProgress");		});
 		}
 	}
-
+    */
 	void Update () { 
 
 	}
